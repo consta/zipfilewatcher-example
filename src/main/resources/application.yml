@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: filewatcher
+
+# refer src/test/resources/application-test.yml also for more properties
