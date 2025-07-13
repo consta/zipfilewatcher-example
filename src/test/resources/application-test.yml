@@ -1,0 +1,18 @@
+filewatcher:
+  upload-dir: build/files_in
+  destination-base: build/files_out
+  rejected-dir: build/files_bad
+  stale-file-wait-ms: 2000
+
+  parameters:
+    - pattern: "FileA-\\d{4}-\\d{2}-\\d{2}\\.zip"
+      fileCount: 2
+      destination: FileA/
+
+    - pattern: "FileB-\\d{4}\\d{2}\\d{2}\\.zip"
+      fileCount: 10
+      destination: FileB/
+
+    - pattern: "FileC-\\d{4}\\d{2}\\d{2}\\.zip"
+      fileCount: 21 # wrong files count, should be 20 - the whole archive to be rejected
+      destination: FileC/
